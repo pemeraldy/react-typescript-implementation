@@ -1,15 +1,12 @@
 import React from "react";
+import {AppContainer} from './styles'
 
 function App() {
   return (
-    <div className="App">
-      <h1 style={headeStyle}>React App</h1>
-    </div>
+    <AppContainer>
+      <h1>App Container</h1>
+    </AppContainer>
   );
 }
 
-const headeStyle: React.CSSProperties = {
-  backgroundColor: "blue",
-  fontWeight: 200
-}
 export default App;

@@ -1,5 +1,5 @@
 import React from "react";
-import {AppContainer} from './styles'
+import { AppContainer } from "./styles";
 
 function App() {
   return (

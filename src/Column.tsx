@@ -5,7 +5,7 @@ interface ColumnProps {
   text: string; //text:? means this prop is optional
 }
 
-export const column = ({
+export const Column = ({
   text,
   children,
 }: React.PropsWithChildren<ColumnProps>) => {

@@ -2,13 +2,17 @@ import React from "react";
 import { ColumnContainer, ColumnTitle } from "./styles";
 
 interface ColumnProps {
-  text?: string; //? means this prop is optional
+  text: string; //text:? means this prop is optional
 }
 
-export const column = ({ text }: ColumnProps) => {
+export const column = ({
+  text,
+  children,
+}: React.PropsWithChildren<ColumnProps>) => {
   return (
     <ColumnContainer>
-      <ColumnTitle>Column Title</ColumnTitle>
+      <ColumnTitle>{text}</ColumnTitle>
+      {children}
     </ColumnContainer>
   );
 };

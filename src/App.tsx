@@ -1,24 +1,18 @@
 import React from "react";
-import {Card} from './Card'
-import {Column} from './Column'
-
+import { useAppState } from "./AppStateContext";
+import { Card } from "./Card";
+import { Column } from "./Column";
+import { AddNewItem } from "./AddNewItem";
 import { AppContainer } from "./styles";
 
 function App() {
+  const { state } = useAppState();
   return (
     <AppContainer>
-      <Column text="Goals">
-        <Card text="Build apps worth billions of dollars" />
-        <Card text="Become a BILLIONAIRE" />
-      </Column>
-      <Column text="Todos">
-        <Card text="Finish React and Typescript" />
-        <Card text="Complete Vue and Typescript" />
-      </Column>
-      <Column text="Done">
-        <Card text="Finished sprint for the week" />
-        <Card text="Completed kobobox app" />
-      </Column>
+      {state.lists.map((list, i) => (
+        <Column text={list.text} key={list.id} index={i} />
+      ))}
+      <AddNewItem toggleButtonText="+ Add another list" onAdd={console.log} />
     </AppContainer>
   );
 }
